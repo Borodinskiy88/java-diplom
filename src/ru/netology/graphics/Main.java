@@ -17,8 +17,9 @@ public class Main {
         server.start(); // Запускаем
 
         //todo Как вызвать метод???
-//        TextColorSchemas schemas = new TextColorSchemas();
-//        schemas.convert(int color);
+        //Вызвал))
+        TextColorSchemas schemas = new TextColorSchemas();
+        schemas.convert(245);
 
 
       //   Или то же, но с выводом на экран:
