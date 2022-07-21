@@ -3,6 +3,7 @@ package ru.netology.graphics;
 import ru.netology.graphics.image.TextColorSchema;
 import ru.netology.graphics.image.TextColorSchemas;
 import ru.netology.graphics.image.TextGraphicsConverter;
+import ru.netology.graphics.image.TextGraphicsConverters;
 import ru.netology.graphics.server.GServer;
 
 import javax.swing.*;
@@ -11,7 +12,8 @@ import java.io.PrintWriter;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        TextGraphicsConverter converter = null; // Создайте тут объект вашего класса конвертера
+        TextGraphicsConverter converter = new TextGraphicsConverters(); // Создайте тут объект вашего класса конвертера
+        //было null изначально
 
         GServer server = new GServer(converter); // Создаём объект сервера
         server.start(); // Запускаем
@@ -23,8 +25,8 @@ public class Main {
 
 
 //      //   Или то же, но с выводом на экран:
-//        String url = "https://raw.githubusercontent.com/netology-code/java-diplom/main/pics/simple-test.png";
-//        String imgTxt = converter.convert(url);
-//        System.out.println(imgTxt);
+        String url = "https://raw.githubusercontent.com/netology-code/java-diplom/main/pics/simple-test.png";
+        String imgTxt = converter.convert(url);
+        System.out.println(imgTxt);
     }
 }
