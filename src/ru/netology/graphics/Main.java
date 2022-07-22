@@ -15,18 +15,27 @@ public class Main {
         TextGraphicsConverter converter = new TextGraphicsConverters(); // Создайте тут объект вашего класса конвертера
         //было null изначально
 
-        GServer server = new GServer(converter); // Создаём объект сервера
-        server.start(); // Запускаем
+//        GServer server = new GServer(converter); // Создаём объект сервера
+//        server.start(); // Запускаем
 
         //todo Как вызвать метод???
         //Вызвал))
+        //Тест выбора символа
         TextColorSchemas schemas = new TextColorSchemas();
-        schemas.convert(245);
+        System.out.println(schemas.convert(245));
+        System.out.println(schemas.convert(215));
+        System.out.println(schemas.convert(185));
+        System.out.println(schemas.convert(155));
+        System.out.println(schemas.convert(125));
+        System.out.println(schemas.convert(65));
+        System.out.println(schemas.convert(35));
+        System.out.println(schemas.convert(5));
+
 
 
 //      //   Или то же, но с выводом на экран:
-        String url = "https://raw.githubusercontent.com/netology-code/java-diplom/main/pics/simple-test.png";
-        String imgTxt = converter.convert(url);
-        System.out.println(imgTxt);
+//        String url = "https://raw.githubusercontent.com/netology-code/java-diplom/main/pics/simple-test.png";
+//        String imgTxt = converter.convert(url);
+//        System.out.println(imgTxt);
     }
 }
