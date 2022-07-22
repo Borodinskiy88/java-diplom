@@ -21,7 +21,9 @@ public class TextColorSchemas implements TextColorSchema{
         } else if (color >= 192 && color < 224) {
             return '-';
         } else if (color >= 224 && color < 256) {
-            return '/';
+            return '.';
+//            return '`';  варианты последнего символа
+//            return '/';
         } else
         return 0;
     }
