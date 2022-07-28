@@ -7,11 +7,12 @@ import java.awt.image.WritableRaster;
 import java.io.IOException;
 import java.net.URL;
 
+
 public class TextGraphicsConverters implements TextGraphicsConverter {
     @Override
     public String convert(String url) throws IOException, BadImageSizeException {
-        // Вот так просто мы скачаем картинку из интернета :)
         BufferedImage img = ImageIO.read(new URL(url));
+
 
         // Если конвертер попросили проверять на максимально допустимое
         // соотношение сторон изображения, то вам здесь надо сделать эту проверку,
@@ -29,8 +30,11 @@ public class TextGraphicsConverters implements TextGraphicsConverter {
         // будет 100x10 (в 1.5 раза меньше).
         // Подумайте, какими действиями можно вычислить новые размеры.
         // Не получается? Спросите вашего руководителя по курсовой, поможем!
-        int newWidth = ???;
-        int newHeight = ???;
+//        int newWidth = ???;
+//        int newHeight = ???;
+
+        int newWidth = img.getWidth();
+        int newHeight = img.getHeight();
 
         // Теперь нам надо попросить картинку изменить свои размеры на новые.
         // Последний параметр означает, что мы просим картинку плавно сузиться
@@ -80,7 +84,7 @@ public class TextGraphicsConverters implements TextGraphicsConverter {
         for ??? {
             for ??? {
                 int color = bwRaster.getPixel(w, h, new int[3])[0];
-                char c = schema.convert(color);
+                char c = schemas.convert(color);
             ??? //запоминаем символ c, например, в двумерном массиве или как-то ещё на ваше усмотрение
             }
         }
