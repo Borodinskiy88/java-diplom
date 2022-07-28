@@ -11,6 +11,8 @@ import java.net.URL;
 public class TextGraphicsConverters implements TextGraphicsConverter {
     @Override
     public String convert(String url) throws IOException, BadImageSizeException {
+        //todo Возможно, так
+        TextColorSchemas schemas = new TextColorSchemas();
         BufferedImage img = ImageIO.read(new URL(url));
 
 
@@ -36,10 +38,14 @@ public class TextGraphicsConverters implements TextGraphicsConverter {
         int newWidth = img.getWidth();
         int newHeight = img.getHeight();
 
+//todo Возможно, так
+        int w = img.getWidth();
+        int h = img.getHeight();
+
         // Теперь нам надо попросить картинку изменить свои размеры на новые.
         // Последний параметр означает, что мы просим картинку плавно сузиться
         // на новые размеры. В результате мы получаем ссылку на новую картинку, которая
-        // представляет собой суженную старую.
+        // представляет собой сужеyную старую.
         Image scaledImage = img.getScaledInstance(newWidth, newHeight, BufferedImage.SCALE_SMOOTH);
 
         // Теперь сделаем её чёрно-белой. Для этого поступим так:
@@ -81,8 +87,8 @@ public class TextGraphicsConverters implements TextGraphicsConverter {
         // получить степень белого пикселя (int color выше) и по ней
         // получить соответствующий символ c. Логикой превращения цвета
         // в символ будет заниматься другой объект, который мы рассмотрим ниже
-        for ??? {
-            for ??? {
+        for (int j = 0; j < h; j++) {
+            for (int i = 0; i < w; i++) {
                 int color = bwRaster.getPixel(w, h, new int[3])[0];
                 char c = schemas.convert(color);
             ??? //запоминаем символ c, например, в двумерном массиве или как-то ещё на ваше усмотрение
@@ -114,5 +120,6 @@ public class TextGraphicsConverters implements TextGraphicsConverter {
 
     @Override
     public void setTextColorSchema(TextColorSchema schema) {
+//        TextColorSchemas schemas = new TextColorSchemas();
     }
 }
