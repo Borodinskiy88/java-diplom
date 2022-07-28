@@ -102,15 +102,9 @@ public class TextGraphicsConverters implements TextGraphicsConverter {
 
         return ???; // Возвращаем собранный текст.
             }
-        }
 
-        // Осталось собрать все символы в один большой текст
-        // Для того, чтобы изображение не было слишком узким, рекомендую
-        // каждый пиксель превращать в два повторяющихся символа, полученных
-        // от схемы.
+ //       return bwRaster.toString(); //todo Возвращаем собранный текст. ???
 
-        return bwRaster.toString(); //todo Возвращаем собранный текст. ???
-    }
 
     @Override
     public void setMaxWidth(int width) {
