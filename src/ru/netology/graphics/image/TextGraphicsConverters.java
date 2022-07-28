@@ -12,7 +12,7 @@ public class TextGraphicsConverters implements TextGraphicsConverter {
     @Override
     public String convert(String url) throws IOException, BadImageSizeException {
         //todo Возможно, так
-        TextColorSchemas schemas = new TextColorSchemas();
+        TextColorSchemas schemas = new TextColorSchemas(); //todo Вызываю пребразователь
         BufferedImage img = ImageIO.read(new URL(url));
 
 
@@ -100,7 +100,7 @@ public class TextGraphicsConverters implements TextGraphicsConverter {
         // каждый пиксель превращать в два повторяющихся символа, полученных
         // от схемы.
 
-        return ???; // Возвращаем собранный текст.
+        return bwRaster.toString(); //todo Возвращаем собранный текст. ???
     }
 
     @Override
