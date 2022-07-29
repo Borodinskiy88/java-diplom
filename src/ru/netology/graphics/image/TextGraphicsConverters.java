@@ -91,11 +91,13 @@ public class TextGraphicsConverters implements TextGraphicsConverter {
         // получить степень белого пикселя (int color выше) и по ней
         // получить соответствующий символ c. Логикой превращения цвета
         // в символ будет заниматься другой объект, который мы рассмотрим ниже
+        int [][] paint = new int[256][256]; //todo
         for (int j = 0; j < h; j++) {
             for (int i = 0; i < w; i++) {
                 int color = bwRaster.getPixel(w, h, new int[3])[0];
                 char c = schemas.convert(color);
-                ??? //запоминаем символ c, например, в двумерном массиве или как-то ещё на ваше усмотрение
+                paint[i][j] = c; //todo
+ //               ??? //запоминаем символ c, например, в двумерном массиве или как-то ещё на ваше усмотрение
             }
         }
 
