@@ -11,7 +11,7 @@ import java.net.URL;
 public class TextGraphicsConverters implements TextGraphicsConverter {
     private int width;
     private int height;
-    private double ratio;
+    private double maxRatio;
 
     @Override
     public String convert(String url) throws IOException, BadImageSizeException {
@@ -124,7 +124,7 @@ public class TextGraphicsConverters implements TextGraphicsConverter {
 
     @Override
     public void setMaxRatio(double maxRatio) {
-        this.ratio = maxRatio;
+        this.maxRatio = maxRatio;
 
     }
 
