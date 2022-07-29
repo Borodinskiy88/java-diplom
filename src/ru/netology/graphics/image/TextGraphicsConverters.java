@@ -98,7 +98,7 @@ public class TextGraphicsConverters implements TextGraphicsConverter {
                 int color = bwRaster.getPixel(w, h, new int[3])[0];
                 char c = schemas.convert(color);
                 paint[i][j] = c; //todo
- //todo               System.out.println(paint[i][j]);
+ //todo               System.out.print(paint[i][j]);
  //               ??? //запоминаем символ c, например, в двумерном массиве или как-то ещё на ваше усмотрение
             }
         }
