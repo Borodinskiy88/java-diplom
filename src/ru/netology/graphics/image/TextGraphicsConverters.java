@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.net.URL;
 
 
+
 public class TextGraphicsConverters implements TextGraphicsConverter {
     private int width;
     private int height;
@@ -91,12 +92,13 @@ public class TextGraphicsConverters implements TextGraphicsConverter {
         // получить степень белого пикселя (int color выше) и по ней
         // получить соответствующий символ c. Логикой превращения цвета
         // в символ будет заниматься другой объект, который мы рассмотрим ниже
-        int [][] paint = new int[256][256]; //todo
+        int [][] paint = new int[300][300]; //todo
         for (int j = 0; j < h; j++) {
             for (int i = 0; i < w; i++) {
                 int color = bwRaster.getPixel(w, h, new int[3])[0];
                 char c = schemas.convert(color);
                 paint[i][j] = c; //todo
+ //todo               System.out.println(paint[i][j]);
  //               ??? //запоминаем символ c, например, в двумерном массиве или как-то ещё на ваше усмотрение
             }
         }
@@ -106,7 +108,8 @@ public class TextGraphicsConverters implements TextGraphicsConverter {
         // каждый пиксель превращать в два повторяющихся символа, полученных
         // от схемы.
 
-        return bwRaster.toString(); // Возвращаем собранный текст.
+        return paint.toString(); // Возвращаем собранный текст.
+
             }
 
  //       return bwRaster.toString(); //todo Возвращаем собранный текст. ???
