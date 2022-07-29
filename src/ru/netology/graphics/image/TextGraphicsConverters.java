@@ -9,6 +9,10 @@ import java.net.URL;
 
 
 public class TextGraphicsConverters implements TextGraphicsConverter {
+    private int width;
+    private int height;
+    private double ratio;
+
     @Override
     public String convert(String url) throws IOException, BadImageSizeException {
         //todo Возможно, так
@@ -100,7 +104,7 @@ public class TextGraphicsConverters implements TextGraphicsConverter {
         // каждый пиксель превращать в два повторяющихся символа, полученных
         // от схемы.
 
-        return ???; // Возвращаем собранный текст.
+        return bwRaster.toString(); // Возвращаем собранный текст.
             }
 
  //       return bwRaster.toString(); //todo Возвращаем собранный текст. ???
@@ -108,16 +112,19 @@ public class TextGraphicsConverters implements TextGraphicsConverter {
 
     @Override
     public void setMaxWidth(int width) {
+        this.width = width;
 
     }
 
     @Override
     public void setMaxHeight(int height) {
+        this.height = height;
 
     }
 
     @Override
     public void setMaxRatio(double maxRatio) {
+        this.ratio = maxRatio;
 
     }
 
