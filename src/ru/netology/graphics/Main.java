@@ -33,11 +33,9 @@ public class Main {
 
 
 
-
-
 //      //   Или то же, но с выводом на экран:
-        String url = "https://raw.githubusercontent.com/netology-code/java-diplom/main/pics/simple-test.png";
-        String imgTxt = converter.convert(url);
-        System.out.println(imgTxt);
+//        String url = "https://raw.githubusercontent.com/netology-code/java-diplom/main/pics/simple-test.png";
+//        String imgTxt = converter.convert(url);
+//        System.out.println(imgTxt);
     }
 }
